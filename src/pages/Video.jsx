@@ -2,9 +2,27 @@ import { useParams } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
 import ReactPlayer from "react-player";
 import VideoComment from "../components/VideoComment";
+import { useEffect, useState } from "react";
 
 const VideoDetail = () => {
   const { id } = useParams();
+
+  const [video, setVideo] = useState({});
+
+  useEffect(() => {
+    getVideo();
+  }, []);
+
+  const getVideo = async () => {
+    try {
+      const respond = await fetch(`http://localhost:3000/api/v1/videos/${id}`);
+      const video = await respond.json();
+      setVideo(video);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="container h-screen mx-auto flex items-center">
       <div className="flex justify-between h-5/6 w-full">
@@ -13,7 +31,22 @@ const VideoDetail = () => {
           <ProductCard />
           <ProductCard />
         </div>
-        <ReactPlayer url="https://youtu.be/S-HDc0h3e_4" />
+        <div>
+          <ReactPlayer url={video.videoUrl} controls={true} />
+          <div className="my-5 flex justify-between">
+            {video.title != undefined ? (
+              <h1>{video.title}</h1>
+            ) : (
+              <h1>Nama tidak ditemukan</h1>
+            )}
+            {video.title != undefined ? (
+              <h1>{video.author}</h1>
+            ) : (
+              <h1>Author tidak ditemukan</h1>
+            )}
+          </div>
+        </div>
+
         <div className="w-1/4 flex flex-col">
           <div className="grow overflow-y-auto scrollbar-thin scrollbar-thumb-success">
             <VideoComment />

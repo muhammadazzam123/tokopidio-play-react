@@ -1,0 +1,35 @@
+{
+  "hash": "2ad1f547",
+  "browserHash": "f9a9fa2f",
+  "optimized": {
+    "react": {
+      "src": "../../.yarn/cache/react-npm-18.2.0-1eae08fee2-88e38092da.zip/node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "2d612da7",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../.yarn/__virtual__/react-dom-virtual-f61be2bea7/0/cache/react-dom-npm-18.2.0-dd675bca1c-7d323310be.zip/node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "9c398d82",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../.yarn/__virtual__/react-router-dom-virtual-f43835f33a/0/cache/react-router-dom-npm-6.15.0-69f6e8fcf2-95301837e2.zip/node_modules/react-router-dom/dist/index.js",
+      "file": "react-router-dom.js",
+      "fileHash": "95ec21ce",
+      "needsInterop": false
+    },
+    "react-player": {
+      "src": "../../.yarn/__virtual__/react-player-virtual-fb5dbf26b1/0/cache/react-player-npm-2.12.0-9b493fb807-77d3e55ed6.zip/node_modules/react-player/lib/index.js",
+      "file": "react-player.js",
+      "fileHash": "623f65df",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "chunk-6KF4S5UN": {
+      "file": "chunk-6KF4S5UN.js"
+    }
+  }
+}
