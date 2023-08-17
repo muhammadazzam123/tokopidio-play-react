@@ -12,6 +12,9 @@ const VideoDetail = () => {
   const [products, setProducts] = useState([]);
   const [comments, setComments] = useState([]);
 
+  const [username, setUsername] = useState("");
+  const [comment, setComment] = useState("");
+
   useEffect(() => {
     getVideo();
     getProducts();
@@ -50,6 +53,36 @@ const VideoDetail = () => {
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const postComment = async (username, comment, videoId) => {
+    try {
+      const respond = await fetch(
+        `http://localhost:3000/api/v1/comments/${videoId}`,
+        {
+          method: "post",
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+          body: JSON.stringify({
+            username: username,
+            comment: comment,
+            videoId: videoId,
+          }),
+        }
+      );
+      const newComment = await respond.json();
+      getComments();
+      setUsername("");
+      setComment("");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    postComment(username, comment, id);
   };
 
   return (
@@ -100,15 +133,19 @@ const VideoDetail = () => {
               })}
             </div>
             <div className="divider"></div>
-            <div>
+
+            <form onSubmit={handleSubmit}>
               <div className="form-control w-full max-w-xs">
                 <label className="label">
                   <span className="label-text">Nama</span>
                 </label>
                 <input
                   type="text"
+                  name="username"
                   placeholder="Nama Kamu"
                   className="input input-bordered w-full max-w-xs"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
                 />
               </div>
               <div className="form-control">
@@ -116,12 +153,17 @@ const VideoDetail = () => {
                   <span className="label-text">Komentar</span>
                 </label>
                 <textarea
+                  name="comment"
                   className="textarea textarea-bordered h-24"
                   placeholder="Isi Komentar"
+                  value={comment}
+                  onChange={(e) => setComment(e.target.value)}
                 ></textarea>
               </div>
-              <button className="btn btn-sm btn-success mt-3">Submit</button>
-            </div>
+              <button type="submit" className="btn btn-sm btn-success mt-3">
+                Submit
+              </button>
+            </form>
           </div>
         </div>
       </div>
