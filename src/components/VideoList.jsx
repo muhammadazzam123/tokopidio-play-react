@@ -22,7 +22,7 @@ const VideoList = () => {
   return (
     <div className="grid grid-cols-5 gap-5 mb-5">
       {videos.length > 0 ? (
-        videos.map((video, index) => {
+        videos.map((video) => {
           return (
             <Link to={"/video/" + video._id} key={video._id}>
               <VideoCard video={video} />

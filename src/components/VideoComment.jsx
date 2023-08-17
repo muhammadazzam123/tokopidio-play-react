@@ -1,6 +1,6 @@
 import userPlaceholder from "../assets/images/user-placeholder.png";
 
-const VideoComment = () => {
+const VideoComment = ({ username, commentContent, date }) => {
   return (
     <div className="flex gap-4 mb-3">
       <div className="avatar">
@@ -8,10 +8,12 @@ const VideoComment = () => {
           <img src={userPlaceholder} />
         </div>
       </div>
-      <div>
-        <p className="text-xs text-end">01 Januari 2023</p>
-        <h1 className="font-semibold">Nama</h1>
-        <p>Komentar lfasd;fksdf ;dfjs f ekfjas fiejf</p>
+      <div className="w-full">
+        <p className="text-xs text-end">
+          {new Date(date).toLocaleDateString()}
+        </p>
+        <h1 className="font-semibold">{username}</h1>
+        <p>{commentContent}</p>
       </div>
     </div>
   );
