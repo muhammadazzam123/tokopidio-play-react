@@ -47,3 +47,5 @@ yarn dev
 ```
 
 8. Access the App at `http://localhost:5371/`
+
+Happy coding! :)
