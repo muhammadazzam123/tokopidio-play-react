@@ -23,7 +23,9 @@ const VideoDetail = () => {
 
   const getVideo = async () => {
     try {
-      const respond = await fetch(`http://localhost:3000/api/v1/videos/${id}`);
+      const respond = await fetch(
+        `${import.meta.env.VITE_API_URI}/videos${id}`
+      );
       const video = await respond.json();
       setVideo(video);
     } catch (error) {
@@ -34,7 +36,7 @@ const VideoDetail = () => {
   const getProducts = async () => {
     try {
       const respond = await fetch(
-        `http://localhost:3000/api/v1/products/${id}`
+        `${import.meta.env.VITE_API_URI}/products/${id}`
       );
       const products = await respond.json();
       setProducts(products);
@@ -46,7 +48,7 @@ const VideoDetail = () => {
   const getComments = async () => {
     try {
       const respond = await fetch(
-        `http://localhost:3000/api/v1/comments/${id}`
+        `${import.meta.env.VITE_API_URI}/comments/${id}`
       );
       const comments = await respond.json();
       setComments(comments);
@@ -58,7 +60,7 @@ const VideoDetail = () => {
   const postComment = async (username, comment, videoId) => {
     try {
       const respond = await fetch(
-        `http://localhost:3000/api/v1/comments/${videoId}`,
+        `${import.meta.env.VITE_API_URI}/comments/${videoId}`,
         {
           method: "post",
           headers: {
