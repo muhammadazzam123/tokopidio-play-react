@@ -24,7 +24,7 @@ const VideoDetail = () => {
   const getVideo = async () => {
     try {
       const respond = await fetch(
-        `${import.meta.env.VITE_API_URI}/videos${id}`
+        `${import.meta.env.VITE_API_URI}/videos/${id}`
       );
       const video = await respond.json();
       setVideo(video);
