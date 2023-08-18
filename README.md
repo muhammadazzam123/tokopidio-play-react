@@ -1,8 +1,49 @@
-# React + Vite
+# Tokopakedi Play REST API
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Tokopakedi Play is a clone from [Tokopedia Play](https://www.tokopedia.com/play/channels). This repository countains the source code and examples for building a React.js website.
 
-Currently, two official plugins are available:
+![Alt text](tokopakedi-play-home.jpeg)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation
+
+1. Clone the repository by running the below code on your terminal
+
+```bash
+git clone https://github.com/mfajririki/tokopakedi-play-react.git
+```
+
+3. Open the project directory or
+
+```bash
+cd tokopakedi-play-react
+```
+
+4. copy .env file
+
+```bash
+cp .env.example .env
+```
+
+5. edit variables on .env file to your local environment
+
+6. Use the package manager `npm` to install ora `yarn` if you use it
+
+```bash
+npm install
+
+or
+
+yarn
+```
+
+7. Run the project
+
+```bash
+npm start
+
+or
+
+yarn dev
+```
+
+8. Access the App at `http://localhost:5371/`
