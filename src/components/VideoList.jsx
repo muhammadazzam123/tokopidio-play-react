@@ -11,7 +11,7 @@ const VideoList = () => {
 
   const getVideos = async () => {
     try {
-      const respond = await fetch("http://localhost:3000/api/v1/videos");
+      const respond = await fetch(`${import.meta.env.VITE_API_URI}/videos`);
       const videos = await respond.json();
       setVideos(videos);
     } catch (error) {
