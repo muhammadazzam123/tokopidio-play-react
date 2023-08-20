@@ -1,21 +1,19 @@
-# Tokopakedi Play REST API
+# tokopidio Play REST API
 
-Tokopakedi Play is a clone from [Tokopedia Play](https://www.tokopedia.com/play/channels). This repository countains the source code and examples for building a React.js website.
-
-![Alt text](tokopakedi-play-home.jpeg)
+tokopidio Play is a clone from [Tokopedia Play](https://www.tokopedia.com/play/channels). This repository countains the source code and examples for building a React.js website.
 
 ## Installation
 
 1. Clone the repository by running the below code on your terminal
 
 ```bash
-git clone https://github.com/mfajririki/tokopakedi-play-react.git
+git clone https://github.com/muhammadazzam123/tokopidio-play-react.git
 ```
 
 3. Open the project directory or
 
 ```bash
-cd tokopakedi-play-react
+cd tokopidio-play-react
 ```
 
 4. copy .env file
