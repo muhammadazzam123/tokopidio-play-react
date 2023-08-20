@@ -7,8 +7,6 @@ const Home = () => {
   return (
     <div className="container mx-auto">
       <Navbar />
-      <Hero />
-      <FilterVideo />
       <VideoList />
     </div>
   );
